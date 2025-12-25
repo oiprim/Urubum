@@ -1,35 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dojh25bgasxc4"]
+[gd_scene load_steps=3 format=3 uid="uid://cw1o7cr3tqlm7"]
 
-[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://enemy.gd" id="1_iri62"]
-[ext_resource type="Texture2D" uid="uid://da1kdoke4knju" path="res://icon.svg" id="2_aw21g"]
-[ext_resource type="Script" path="res://enemy_sprite.gd" id="3_aw21g"]
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_asc2x"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v4xpu"]
-size = Vector2(125, 129)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l24kc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw21g"]
-size = Vector2(125, 127)
+[node name="CenaJoaoNaoZinho" type="Node2D"]
 
-[node name="CenaDoLittleJon" type="Node2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_asc2x")
 
-[node name="Enemy" type="RigidBody2D" parent="."]
-script = ExtResource("1_iri62")
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 
-[node name="enemySprite" type="Sprite2D" parent="Enemy"]
-texture = ExtResource("2_aw21g")
-script = ExtResource("3_aw21g")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_v4xpu")
-
-[node name="Chaozinho" type="StaticBody2D" parent="."]
-position = Vector2(606, 669)
-scale = Vector2(12.4400015, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Chaozinho"]
-position = Vector2(0.7234702, -7)
-shape = SubResource("RectangleShape2D_aw21g")
-
-[node name="Sprite2D" type="Sprite2D" parent="Chaozinho"]
-texture = ExtResource("2_aw21g")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_l24kc")
