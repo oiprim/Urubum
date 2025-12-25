@@ -20,3 +20,5 @@ shape = SubResource("RectangleShape2D_j7yu6")
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+
+[node name="cosiinha" type="StaticBody2D" parent="."]
