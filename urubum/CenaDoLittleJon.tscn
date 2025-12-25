@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dojh25bgasxc4"]
+
+[ext_resource type="Texture2D" uid="uid://da1kdoke4knju" path="res://icon.svg" id="1_asc2x"]
+
+[node name="CenaDoLittleJon" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(814, 266)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_asc2x")
