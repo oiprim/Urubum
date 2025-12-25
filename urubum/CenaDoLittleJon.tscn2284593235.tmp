@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dojh25bgasxc4"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_asc2x"]
+[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://enemy.gd" id="1_iri62"]
+[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://camera.gd" id="2_v4xpu"]
+[ext_resource type="Texture2D" uid="uid://3f1y8qr5hdp0" path="res://Sprites/Urubao.png" id="4_p2fcy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l24kc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy5s4"]
+size = Vector2(60, 152)
+
+[node name="CenaJoaoNaoZinho" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_asc2x")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_l24kc")
+
+[node name="Camera" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+script = ExtResource("2_v4xpu")
+
+[node name="Enemy" type="RigidBody2D" parent="."]
+position = Vector2(136, -126)
+lock_rotation = true
+script = ExtResource("1_iri62")
+
+[node name="enemyCollision" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(12, -1)
+shape = SubResource("RectangleShape2D_cy5s4")
+
+[node name="enemySprite" type="Sprite2D" parent="Enemy"]
+modulate = Color(1.759715, 0.74038035, 0.6197832, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_p2fcy")
