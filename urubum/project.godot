@@ -11,10 +11,5 @@ config_version=5
 [application]
 
 config/name="Urubum"
-<<<<<<< Updated upstream
-run/main_scene="uid://cw1o7cr3tqlm7"
-=======
-run/main_scene="uid://dojh25bgasxc4"
->>>>>>> Stashed changes
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
