@@ -10,10 +10,6 @@ preload("res://Sprites/Urubao.png"), ##IDLE -> 0
 @onready var leftWall := $RayCast2DL;
 @onready var rightWall := $RayCast2DR;
 
-var maxTimeToFlip : int = 120;
-var timeToFlip : int = maxTimeToFlip;
-
-
 enum STATES { IDLE, SEARCH }
 
 var state: STATES = STATES.IDLE
@@ -36,7 +32,6 @@ func _physics_process(_delta):
 
 func idle():
 	spriteRend.texture = spritePerState.get(0);
-	timeToFlip -= 1;
 	
 	self.linear_velocity = Vector2(0, 0)
 
@@ -48,11 +43,6 @@ func searching():
 		spriteRend.flip_h = !spriteRend.flip_h;
 	elif leftWall.is_colliding() and spriteRend.flip_h == true:
 		spriteRend.flip_h = !spriteRend.flip_h;
-	
-	
-	#if Input.is_key_pressed(KEY_K):
-	#	spriteRend.flip_h = !spriteRend.flip_h
-	
-	
+
 	self.linear_velocity = Vector2(speed * searchSide, 0);
 #endregion
