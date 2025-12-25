@@ -1,7 +1,7 @@
 extends Camera2D
 
 
-@onready var target = null;
+@onready var target = $"../Player";
 
-#func _process(_delta):
-	#global_position = target.global_position
+func _process(_delta):
+	global_position = target.getPlayerPos();
