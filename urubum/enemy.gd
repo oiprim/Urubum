@@ -1,48 +1,53 @@
 extends RigidBody2D
 
-var speed = 100
+var speed = 200
 var searchSide
+@onready var player := $"../Player"
+@onready var wallDetection := $DetectWalls
 @onready var spriteRend = $enemySprite
-@onready var spritePerState = [
-preload("res://Sprites/Urubao.png"), ##IDLE -> 0
+
+@onready var spritePerState = [ #Guardando Sprites
+preload("res://Sprites/Urubao.png"), #IDLE -> 0
 ];
 
-@onready var leftWall := $RayCast2DL;
-@onready var rightWall := $RayCast2DR;
 
-enum STATES { IDLE, SEARCH }
-
-var state: STATES = STATES.IDLE
+enum STATES { IDLE, SEARCH, HUNT}
+var state: STATES = STATES.SEARCH
 
 func _physics_process(_delta):
 	spriteRend.scale = Vector2(0.1, 0.1);
+	
+
 	match state:
 		STATES.IDLE:
 			idle();
-			
-			if Input.is_key_pressed(KEY_K):
-				state = STATES.SEARCH
-			
+
 		STATES.SEARCH:
-			searching();
+			search();
 			
-			
+		STATES.HUNT:
+			hunt();
+
+@warning_ignore("unused_parameter")
+func virar(body): #Flipar o sprite do inimigo
+	spriteRend.flip_h = !spriteRend.flip_h 
 
 #region StatesFunction #definindo cada função do inimigo
 
 func idle():
-	spriteRend.texture = spritePerState.get(0);
-	
-	self.linear_velocity = Vector2(0, 0)
+	spriteRend.texture = spritePerState.get(0); #Setando sprite
+	self.linear_velocity = Vector2(0, self.linear_velocity.y); #Definindo que tenho que ficar parado
 
-func searching():
-	if(spriteRend.flip_h == false): searchSide = 1
-	else: searchSide = -1
+func search(): #Rondar de um lado para o outro
+	if(spriteRend.flip_h == false): 
+		searchSide = 1 
+	else: searchSide = -1  #Definindo o lado da procura
 	
-	if rightWall.is_colliding() and spriteRend.flip_h == false:
-		spriteRend.flip_h = !spriteRend.flip_h;
-	elif leftWall.is_colliding() and spriteRend.flip_h == true:
-		spriteRend.flip_h = !spriteRend.flip_h;
+	self.linear_velocity = Vector2(speed * searchSide, self.linear_velocity.y); #Mandando ele andar
+	wallDetection.body_entered.connect(virar) #Virando quando bate na parede
 
-	self.linear_velocity = Vector2(speed * searchSide, 0);
+func hunt():
+	pass
+	
+
 #endregion

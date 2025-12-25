@@ -1,12 +1,18 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 340.0
 const JUMP_VELOCITY = -600.0
 
+@onready var spriteRend = $playerSprite
 const somzin = "res://hit.mp3"
 
 func _physics_process(delta: float) -> void:
+	if velocity.x != 0:
+		if velocity.x >= 0:
+			spriteRend.flip_h = false
+		else: spriteRend.flip_h = true
+		
 	
 	# Add the gravity.
 	if not is_on_floor():
