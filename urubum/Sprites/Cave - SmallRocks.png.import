@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3f1y8qr5hdp0"
-path="res://.godot/imported/Urubao.png-0a16d66c8d0b2a5337a609212ab3eda8.ctex"
+uid="uid://gaevsa8h30os"
+path="res://.godot/imported/Cave - SmallRocks.png-93448ebd64a77dba03f09a059a87bedf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Urubao.png"
-dest_files=["res://.godot/imported/Urubao.png-0a16d66c8d0b2a5337a609212ab3eda8.ctex"]
+source_file="res://Sprites/Cave - SmallRocks.png"
+dest_files=["res://.godot/imported/Cave - SmallRocks.png-93448ebd64a77dba03f09a059a87bedf.ctex"]
 
 [params]
 
