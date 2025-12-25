@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dojh25bgasxc4"]
+[gd_scene load_steps=3 format=3 uid="uid://dojh25bgasxc4"]
 
 [ext_resource type="Texture2D" uid="uid://da1kdoke4knju" path="res://icon.svg" id="1_asc2x"]
+[ext_resource type="Script" uid="uid://o3idp83pckxb" path="res://sprite_2d.gd" id="2_iri62"]
 
 [node name="CenaDoLittleJon" type="Node2D"]
 
@@ -9,3 +10,4 @@ position = Vector2(814, 266)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 texture = ExtResource("1_asc2x")
+script = ExtResource("2_iri62")
