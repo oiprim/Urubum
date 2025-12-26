@@ -83,8 +83,5 @@ func rush():
 	if(rushTime <= 0):
 		state = STATES.PREPARE;
 		rushTime = maxTimeRush;
-	
-	pass
-	
 
 #endregion

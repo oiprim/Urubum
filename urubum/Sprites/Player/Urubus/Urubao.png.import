@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b51ctnoxeh20c"
-path="res://.godot/imported/COISAMALUKA.png-309c2192b052bf0d3a8b144657be1426.ctex"
+uid="uid://3f1y8qr5hdp0"
+path="res://.godot/imported/Urubao.png-41551518b5e4f954f65e06ea0e761f3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Urubus/COISAMALUKA.png"
-dest_files=["res://.godot/imported/COISAMALUKA.png-309c2192b052bf0d3a8b144657be1426.ctex"]
+source_file="res://Sprites/Player/Urubus/Urubao.png"
+dest_files=["res://.godot/imported/Urubao.png-41551518b5e4f954f65e06ea0e761f3c.ctex"]
 
 [params]
 

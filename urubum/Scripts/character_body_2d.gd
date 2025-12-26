@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 
-@onready var spriteRend = $playerSprite
+@onready var spriteRend = $playerSprites
 const somzin = "res://hit.mp3"
 
 func _physics_process(delta: float) -> void:
