@@ -1,16 +1,17 @@
-[gd_scene load_steps=14 format=4 uid="uid://tmqnjb884e6t"]
+[gd_scene load_steps=25 format=4 uid="uid://tmqnjb884e6t"]
 
-[ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://character_body_2d.gd" id="1_qfxor"]
-[ext_resource type="Texture2D" uid="uid://3f1y8qr5hdp0" path="res://Sprites/Urubao.png" id="2_u1dkn"]
-[ext_resource type="Texture2D" uid="uid://c0ypuh6123ba" path="res://Sprites/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/tileset_64x64(new).png" id="3_m2lk7"]
-[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://camera.gd" id="4_u1dkn"]
-[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://enemy.gd" id="5_m2lk7"]
+[ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://Scripts/character_body_2d.gd" id="1_63i4u"]
+[ext_resource type="Texture2D" uid="uid://3f1y8qr5hdp0" path="res://Sprites/Urubao.png" id="2_t2uxj"]
+[ext_resource type="Texture2D" uid="uid://c0ypuh6123ba" path="res://Sprites/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/tileset_64x64(new).png" id="3_m5r36"]
+[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://Scripts/camera.gd" id="4_xt6w4"]
+[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://Scripts/enemy.gd" id="5_ilb46"]
+[ext_resource type="Texture2D" uid="uid://uf5ldf8e27oj" path="res://Sprites/platformer_metroidvania asset pack v1.01/enemies sprites/mushroom/mushroom_spritesheet.png" id="6_t2uxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2fcy"]
 size = Vector2(66, 152)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cy5s4"]
-texture = ExtResource("3_m2lk7")
+texture = ExtResource("3_m5r36")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 1:1/0 = 0
@@ -3279,24 +3280,130 @@ size = Vector2(183, 61)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m2lk7"]
 friction = 0.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2uxj"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5r36"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt6w4"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilb46"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a5se"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1umfk"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2na5q"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7tya"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4e0t"]
+atlas = ExtResource("6_t2uxj")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mii5c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2uxj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5r36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt6w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilb46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a5se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1umfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2na5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7tya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4e0t")
+}],
+"loop": true,
+"name": &"running",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5r36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xt6w4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ilb46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a5se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1umfk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2na5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o7tya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4e0t")
+}],
+"loop": true,
+"name": &"rushing",
+"speed": 30.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8l6kv"]
-size = Vector2(67, 152.00008)
+size = Vector2(114.00006, 126.00006)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m2lk7"]
 radius = 283.06
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2lk7"]
-size = Vector2(104, 148)
+size = Vector2(132, 120)
 
 [node name="CenaJoaoNaoZinho" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(0, -49)
-script = ExtResource("1_qfxor")
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(216, -179)
+collision_layer = 2
+script = ExtResource("1_63i4u")
 
 [node name="playerSprite" type="Sprite2D" parent="Player"]
 scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_u1dkn")
+texture = ExtResource("2_t2uxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(14, 0)
@@ -3344,32 +3451,33 @@ shape = SubResource("RectangleShape2D_nfhhs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
-script = ExtResource("4_u1dkn")
+script = ExtResource("4_xt6w4")
 
 [node name="Enemy" type="RigidBody2D" parent="."]
 modulate = Color(0.57, 0.26790002, 0.26790002, 1)
 position = Vector2(-375, -195)
 physics_material_override = SubResource("PhysicsMaterial_m2lk7")
 lock_rotation = true
-script = ExtResource("5_m2lk7")
+script = ExtResource("5_ilb46")
 
-[node name="enemySprite" type="Sprite2D" parent="Enemy"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("2_u1dkn")
+[node name="enemySprites" type="AnimatedSprite2D" parent="Enemy"]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_mii5c")
+animation = &"running"
+autoplay = "running"
 
 [node name="enemyCollision" type="CollisionShape2D" parent="Enemy"]
-position = Vector2(16, 0)
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_8l6kv")
 
 [node name="DetectPlayer" type="Area2D" parent="Enemy"]
-position = Vector2(16, 0)
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/DetectPlayer"]
 shape = SubResource("CircleShape2D_m2lk7")
 
 [node name="DetectWalls" type="Area2D" parent="Enemy"]
-position = Vector2(16, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/DetectWalls"]
 shape = SubResource("RectangleShape2D_m2lk7")
