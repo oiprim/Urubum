@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 340.0
+const SPEED = 400.0
 const JUMP_VELOCITY = -600.0
 
 @onready var spriteRend = $playerSprite
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += Vector2(velocity.x, 1000) * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():

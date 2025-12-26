@@ -1,73 +1,89 @@
 extends RigidBody2D
 
-var baseSpeed = 200
-var rushSpeed = 800
-var speed = baseSpeed
-var searchSide
+var baseSpeed := 200
+var rushSpeed := 700
+var speed := baseSpeed
+var lookDirection
+var maxTimeToRush := 90
+var timeToRush := maxTimeToRush
+var maxTimeRush := 20
+var rushTime := maxTimeRush
+
 @onready var player := $"../Player"
 @onready var wallDetection := $DetectWalls
 @onready var playerDetection := $DetectPlayer
 @onready var spriteRend := $enemySprites
 
-@onready var spritePerState = [ #Guardando Sprites
-preload("res://Sprites/Urubao.png"), #IDLE -> 0
-];
-
 func ready():
 	pass
 
-enum STATES { IDLE, SEARCH, CHASE}
-var state: STATES = STATES.SEARCH
+enum STATES { IDLE, PATROL, PREPARE, RUSH}
+var state: STATES = STATES.PATROL
 
 func _physics_process(_delta):
-	
-	if(playerDetection.has_overlapping_bodies()):
-		state = STATES.CHASE
-
+	if(playerDetection.has_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
+		state = STATES.PREPARE
 
 	match state:
 		
 		STATES.IDLE:
 			idle();
-
-		STATES.SEARCH:
-			search();
-
-		STATES.CHASE:
-			chase();
-
+		STATES.PATROL:
+			patrol();
+		STATES.PREPARE:
+			prepare();
+		STATES.RUSH:
+			rush();
 
 
 @warning_ignore("unused_parameter")
 func virar(body): #Flipar o sprite do inimigo
 	spriteRend.flip_h = !spriteRend.flip_h 
 
-#region StatesFunction #definindo cada função do inimigo
+#region Definindo cada estado do inimigo
 
 func idle():
 	self.linear_velocity = Vector2(0, self.linear_velocity.y); #Definindo que tenho que ficar parado
 
-func search(): #Rondar de um lado para o outro
+func patrol(): #Rondar de um lado para o outro
 	spriteRend.play("running")
 	speed = baseSpeed
 	if(spriteRend.flip_h == false): 
-		searchSide = 1 
-	else: searchSide = -1  #Definindo o lado da procura
+		lookDirection = 1 
+	else: lookDirection = -1  #Definindo o lado da procura
 	
-	self.linear_velocity = Vector2(speed * searchSide, self.linear_velocity.y); #Mandando ele andar
+	self.linear_velocity = Vector2(speed * lookDirection, self.linear_velocity.y); #Mandando ele andar
 	wallDetection.body_entered.connect(virar) #Virando quando bate na parede
 
-func chase():
-	spriteRend.play("rushing")
-	spriteRend.modulate = Color(1.0, 0.533, 0.536, 1.0)
-	speed = rushSpeed
+func prepare():
+	spriteRend.play("idle");
+	lookDirection = sign(player.global_position.x - global_position.x)
+	timeToRush -= 1;
+	if(lookDirection == -1):
+		spriteRend.flip_h = true
+	else: spriteRend.flip_h = false
+
+	if(timeToRush <= 0):
+		timeToRush = maxTimeToRush;
+		state = STATES.RUSH;
 	
-	if(spriteRend.flip_h == false): 
-		searchSide = 1 
-	else: searchSide = -1
+	self.linear_velocity = Vector2(0, self.linear_velocity.y);
+
+func rush():
+	spriteRend.play("rushing");
+	rushTime -= 1;
 	
-	self.linear_velocity = Vector2(speed * searchSide, self.linear_velocity.y);
-	wallDetection.body_entered.connect(virar)
+	if(lookDirection == -1):
+		spriteRend.flip_h = true
+	else: spriteRend.flip_h = false
+	
+	
+	self.linear_velocity = Vector2(rushSpeed * lookDirection, self.linear_velocity.y);
+	
+	if(rushTime <= 0):
+		state = STATES.PREPARE;
+		rushTime = maxTimeRush;
+	
 	pass
 	
 

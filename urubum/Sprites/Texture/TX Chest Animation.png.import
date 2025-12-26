@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3f1y8qr5hdp0"
-path="res://.godot/imported/Urubao.png-66256248f8b72fdc34dd142e94a22be9.ctex"
+uid="uid://dbhxsoyoygd4e"
+path="res://.godot/imported/TX Chest Animation.png-0c90b8e2346f7d7b4545e96a462b5e74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Urubao.png"
-dest_files=["res://.godot/imported/Urubao.png-66256248f8b72fdc34dd142e94a22be9.ctex"]
+source_file="res://Sprites/Texture/TX Chest Animation.png"
+dest_files=["res://.godot/imported/TX Chest Animation.png-0c90b8e2346f7d7b4545e96a462b5e74.ctex"]
 
 [params]
 
