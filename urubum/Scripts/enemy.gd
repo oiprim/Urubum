@@ -21,9 +21,17 @@ enum STATES { IDLE, PATROL, PREPARE, RUSH}
 var state: STATES = STATES.PATROL
 
 func _physics_process(_delta):
-	if(playerDetection.has_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
+	#if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
+	#	state = STATES.PREPARE
+	
+	#COMENTEI SEU CÓDIOG AQUI EM CIMA
+	#TO TENTANDO FAZER O INIMIGO ALTERNAR ENTRE ATAQUE E PATROL AQUI EMBAIXO
+	
+	if (playerDetection.area_entered(player)) and state != STATES.PREPARE and state != STATES.RUSH:
 		state = STATES.PREPARE
-
+	if (playerDetection.area_exited(player)) and state == STATES.PREPARE:
+		state = STATES.PATROL
+	
 	match state:
 		
 		STATES.IDLE:
