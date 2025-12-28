@@ -9,13 +9,21 @@ const somzin = "res://hit.mp3"
 
 func _physics_process(delta: float) -> void:
 	if velocity.x != 0:
+		spriteRend.play("run");
 		if velocity.x >= 0:
-			spriteRend.flip_h = false
-		else: spriteRend.flip_h = true
-		
+			spriteRend.scale.x = 4
+		else: spriteRend.scale.x = -4
+	else:
+		spriteRend.play("idle");
+
+	
 	
 	# Add the gravity.
 	if not is_on_floor():
+		if(velocity.y <= 0 ):
+			spriteRend.play("jump");
+		elif(velocity.y >= 0):
+			spriteRend.play("fall");
 		velocity += Vector2(velocity.x, 1000) * delta
 
 	# Handle jump.

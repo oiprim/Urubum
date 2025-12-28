@@ -21,16 +21,16 @@ enum STATES { IDLE, PATROL, PREPARE, RUSH}
 var state: STATES = STATES.PATROL
 
 func _physics_process(_delta):
-	#if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
-	#	state = STATES.PREPARE
+	if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
+		state = STATES.PREPARE
 	
 	#COMENTEI SEU CÓDIOG AQUI EM CIMA
 	#TO TENTANDO FAZER O INIMIGO ALTERNAR ENTRE ATAQUE E PATROL AQUI EMBAIXO
 	
-	if (playerDetection.area_entered(player)) and state != STATES.PREPARE and state != STATES.RUSH:
-		state = STATES.PREPARE
-	if (playerDetection.area_exited(player)) and state == STATES.PREPARE:
-		state = STATES.PATROL
+	#if (playerDetection.area_entered(player)) and state != STATES.PREPARE and state != STATES.RUSH:
+		#state = STATES.PREPARE
+	#if (playerDetection.area_exited(player)) and state == STATES.PREPARE:
+		#state = STATES.PATROL
 	
 	match state:
 		
@@ -61,7 +61,9 @@ func patrol(): #Rondar de um lado para o outro
 	else: lookDirection = -1  #Definindo o lado da procura
 	
 	self.linear_velocity = Vector2(speed * lookDirection, self.linear_velocity.y); #Mandando ele andar
-	wallDetection.body_entered.connect(virar) #Virando quando bate na parede
+	
+	if not wallDetection.body_entered.is_connected(virar):
+		wallDetection.body_entered.connect(virar)#Virando quando bate na parede
 
 func prepare():
 	spriteRend.play("idle");
