@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+#region Definindo Variaveis
+
 var baseSpeed := 200
 var rushSpeed := 700
 var speed := baseSpeed
@@ -14,11 +16,10 @@ var rushTime := maxTimeRush
 @onready var playerDetection := $DetectPlayer
 @onready var spriteRend := $enemySprites
 
-func ready():
-	pass
-
 enum STATES { IDLE, PATROL, PREPARE, RUSH}
 var state: STATES = STATES.PATROL
+
+#endregion
 
 func _physics_process(_delta):
 	if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
