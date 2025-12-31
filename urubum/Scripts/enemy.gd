@@ -12,7 +12,7 @@ var maxTimeRush := 20
 var rushTime := maxTimeRush
 
 @onready var player := $"../Player"
-@onready var wallDetection := $DetectWalls
+@onready var wallDetection := $RayCast2D
 @onready var playerDetection := $DetectPlayer
 @onready var spriteRend := $enemySprites
 
@@ -25,14 +25,6 @@ func _physics_process(_delta):
 	if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
 		state = STATES.PREPARE
 	
-	#COMENTEI SEU CÓDIOG AQUI EM CIMA
-	#TO TENTANDO FAZER O INIMIGO ALTERNAR ENTRE ATAQUE E PATROL AQUI EMBAIXO
-	
-	#if (playerDetection.area_entered(player)) and state != STATES.PREPARE and state != STATES.RUSH:
-		#state = STATES.PREPARE
-	#if (playerDetection.area_exited(player)) and state == STATES.PREPARE:
-		#state = STATES.PATROL
-	
 	match state:
 		
 		STATES.IDLE:
@@ -44,9 +36,8 @@ func _physics_process(_delta):
 		STATES.RUSH:
 			rush();
 
-
 @warning_ignore("unused_parameter")
-func virar(body): #Flipar o sprite do inimigo
+func flipSprite(body): #Flipar o sprite do inimigo
 	spriteRend.flip_h = !spriteRend.flip_h 
 
 #region Definindo cada estado do inimigo
@@ -63,9 +54,9 @@ func patrol(): #Rondar de um lado para o outro
 	
 	self.linear_velocity = Vector2(speed * lookDirection, self.linear_velocity.y); #Mandando ele andar
 	
-	if not wallDetection.body_entered.is_connected(virar):
-		wallDetection.body_entered.connect(virar)#Virando quando bate na parede
-
+	if wallDetection.is_colliding():
+		spriteRend.scale = spriteRend.scale * -1
+		
 func prepare():
 	spriteRend.play("idle");
 	lookDirection = sign(player.global_position.x - global_position.x)
@@ -81,6 +72,7 @@ func prepare():
 	self.linear_velocity = Vector2(0, self.linear_velocity.y);
 
 func rush():
+	print(rushTime)
 	spriteRend.play("rushing");
 	rushTime -= 1;
 	
@@ -92,7 +84,7 @@ func rush():
 	self.linear_velocity = Vector2(rushSpeed * lookDirection, self.linear_velocity.y);
 	
 	if(rushTime <= 0):
-		state = STATES.PREPARE;
 		rushTime = maxTimeRush;
-
+		state = STATES.PATROL;
+		
 #endregion

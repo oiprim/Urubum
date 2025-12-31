@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://tmqnjb884e6t"]
+[gd_scene load_steps=61 format=4 uid="uid://tmqnjb884e6t"]
 
 [ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://Scripts/character_body_2d.gd" id="1_63i4u"]
 [ext_resource type="Texture2D" uid="uid://crmt5srn0p4de" path="res://Sprites/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_1.png" id="2_ilb46"]
@@ -467,9 +467,6 @@ size = Vector2(114.00006, 126.00006)
 [sub_resource type="CircleShape2D" id="CircleShape2D_m2lk7"]
 radius = 316.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2lk7"]
-size = Vector2(132, 120)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o7tya"]
 size = Vector2(109, 1918)
 
@@ -588,10 +585,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/DetectPlayer"]
 shape = SubResource("CircleShape2D_m2lk7")
 
-[node name="DetectWalls" type="Area2D" parent="Enemy"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/DetectWalls"]
-shape = SubResource("RectangleShape2D_m2lk7")
+[node name="RayCast2D" type="RayCast2D" parent="Enemy"]
+position = Vector2(1, 40)
+target_position = Vector2(60, 0)
 
 [node name="WorldWalls" type="StaticBody2D" parent="."]
 position = Vector2(-3702, -399)
