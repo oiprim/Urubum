@@ -546,6 +546,10 @@ offset = Vector2(5.5, -21)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_p2fcy")
 
+[node name="CoyoteTimer" type="Timer" parent="Player"]
+wait_time = 0.15
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1304, -183)
 zoom = Vector2(0.735, 0.735)
