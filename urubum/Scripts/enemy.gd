@@ -2,9 +2,8 @@ extends RigidBody2D
 
 #region Definindo Variaveis
 
-var baseSpeed := 200
+var speed := 200
 var rushSpeed := 700
-var speed := baseSpeed
 var lookDirection
 var maxTimeToRush := 90
 var timeToRush := maxTimeToRush
@@ -36,9 +35,9 @@ func _physics_process(_delta):
 		STATES.RUSH:
 			rush();
 
-@warning_ignore("unused_parameter")
-func flipSprite(body): #Flipar o sprite do inimigo
-	spriteRend.flip_h = !spriteRend.flip_h 
+#@warning_ignore("unused_parameter")
+#func flipSprite(body): #Flipar o sprite do inimigo
+#	spriteRend.flip_h = !spriteRend.flip_h 
 
 #region Definindo cada estado do inimigo
 
@@ -47,7 +46,7 @@ func idle():
 
 func patrol(): #Rondar de um lado para o outro
 	spriteRend.play("running")
-	speed = baseSpeed
+	speed = speed
 	if(spriteRend.flip_h == false): 
 		lookDirection = 1 
 	else: lookDirection = -1  #Definindo o lado da procura

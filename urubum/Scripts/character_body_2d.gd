@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-
+@export var maxSpeed : int = 400
 @export var speed : int = 400
 @export var maxJumpHeigh : int = -1000
 @export var gravityForce : int = 2500
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		sprite_rend.play("idle");
 
-	# Add the gravity.
+	# Gravitade.
 	if not is_on_floor():
 		if(velocity.y <= 0 ):
 			sprite_rend.play("jump");
@@ -26,9 +26,9 @@ func _physics_process(delta: float) -> void:
 		velocity += Vector2(velocity.x, gravityForce) * delta
 
 	# Pulo
-	if Input.is_action_just_pressed("ui_accept") and (is_on_floor() or !coyote_timer.is_stopped()):
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = maxJumpHeigh
-	if Input.is_action_just_released("ui_accept") and velocity.y <0:
+	if Input.is_action_just_released("jump") and velocity.y <0:
 		velocity.y = 0
 
 	# Pega input e movimenta
@@ -38,13 +38,21 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
-	#Coyote Time && Move and Slide
+	#Coyote Time e Move and Slide
 	var was_on_floor = is_on_floor()
 	
 	move_and_slide()
 	
 	if was_on_floor &&  !is_on_floor():
 		coyote_timer.start()
+	
+	#Agachar
+	if Input.is_action_just_pressed("crouch") && is_on_floor():
+		speed /= 2
+	if Input.is_action_just_released("crouch"):
+		speed = maxSpeed
+	#aplicar sprite agachado
+	#ajustar para que agache quando pousar no chão se o botão for pressionado no ar
 	
 func getPlayerPos():
 	return global_position;
