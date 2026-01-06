@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://clubs238lo13s"
+path="res://.godot/imported/Player_CrouchAll.png-e810588cc3e98341644993e3c5cf762d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Player/Player_CrouchAll.png"
+dest_files=["res://.godot/imported/Player_CrouchAll.png-e810588cc3e98341644993e3c5cf762d.ctex"]
 
 [params]
 

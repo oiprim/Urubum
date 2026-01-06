@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://bwmwj1qmuetii"
+path="res://.godot/imported/Player_CrouchTransition.png-c1d3857d3f862dcd00a96270bace53d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Player/Player_CrouchTransition.png"
+dest_files=["res://.godot/imported/Player_CrouchTransition.png-c1d3857d3f862dcd00a96270bace53d2.ctex"]
 
 [params]
 
