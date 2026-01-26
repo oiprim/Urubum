@@ -13,7 +13,6 @@ var isAttacking : bool
 var hasAttack : bool
 var attackDamage : int = 1
 
-@onready var enemy = $"../Enemy"
 @onready var sprite_rend = $playerSprites
 @onready var coyote_timer = $CoyoteTimer
 
@@ -70,7 +69,7 @@ func input_and_move():
 	var direction := Input.get_axis("ui_left", "ui_right")
 	
 	if direction != 0:
-		lookDirection = direction
+		lookDirection = sign(direction)
 	
 	if direction:
 		velocity.x = direction * speed

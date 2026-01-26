@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://tmqnjb884e6t"]
+[gd_scene load_steps=79 format=4 uid="uid://tmqnjb884e6t"]
 
 [ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://Scripts/character_body_2d.gd" id="1_63i4u"]
 [ext_resource type="Texture2D" uid="uid://crmt5srn0p4de" path="res://Sprites/platformer_metroidvania asset pack v1.01/tiles and background_foreground (new)/bg_1.png" id="2_ilb46"]
@@ -337,6 +337,17 @@ size = Vector2(66, 152)
 [sub_resource type="CircleShape2D" id="CircleShape2D_povt6"]
 radius = 89.35057
 
+[sub_resource type="Gradient" id="Gradient_5gw02"]
+offsets = PackedFloat32Array(0, 0.28666666, 0.49333334, 0.6333333, 0.9)
+colors = PackedColorArray(1, 0.36666667, 0, 1, 0.220339, 0.08079097, 0, 1, 0.044067815, 0.0161582, 0, 1, 0.037566006, 0.013774203, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8dtke"]
+gradient = SubResource("Gradient_5gw02")
+width = 256
+height = 256
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cy5s4"]
 texture = ExtResource("3_m5r36")
 texture_region_size = Vector2i(64, 64)
@@ -646,10 +657,8 @@ script = ExtResource("1_63i4u")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ygyag")
-animation = &"attack1"
+animation = &"idle"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 offset = Vector2(5.5, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -658,13 +667,18 @@ shape = SubResource("RectangleShape2D_p2fcy")
 [node name="attackCollision" type="Area2D" parent="Player"]
 
 [node name="attackShape" type="CollisionShape2D" parent="Player/attackCollision"]
-position = Vector2(165.65503, 0)
+position = Vector2(165, 0)
 shape = SubResource("CircleShape2D_povt6")
 debug_color = Color(0.6627451, 0.0627451, 0.77254903, 0.5137255)
 
 [node name="CoyoteTimer" type="Timer" parent="Player"]
 wait_time = 0.15
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+color = Color(1, 0.97, 0.97, 1)
+texture = SubResource("GradientTexture2D_8dtke")
+texture_scale = 3.36
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-1304, -183)
@@ -706,62 +720,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_m2lk7")
 
 [node name="RayCast2D" type="RayCast2D" parent="Enemy"]
-position = Vector2(1, 40)
-target_position = Vector2(60, 0)
-
-[node name="Enemy2" type="RigidBody2D" parent="."]
-modulate = Color(0.57, 0.26790002, 0.26790002, 1)
-position = Vector2(2937, 698)
-physics_material_override = SubResource("PhysicsMaterial_m2lk7")
-lock_rotation = true
-script = ExtResource("5_ilb46")
-
-[node name="enemySprites" type="AnimatedSprite2D" parent="Enemy2"]
-texture_filter = 1
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_mii5c")
-animation = &"running"
-autoplay = "running"
-
-[node name="enemyCollision" type="CollisionShape2D" parent="Enemy2"]
-scale = Vector2(0.9999995, 0.9999995)
-shape = SubResource("RectangleShape2D_8l6kv")
-
-[node name="DetectPlayer" type="Area2D" parent="Enemy2"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/DetectPlayer"]
-shape = SubResource("CircleShape2D_m2lk7")
-
-[node name="RayCast2D" type="RayCast2D" parent="Enemy2"]
-position = Vector2(1, 40)
-target_position = Vector2(60, 0)
-
-[node name="Enemy3" type="RigidBody2D" parent="."]
-modulate = Color(0.57, 0.26790002, 0.26790002, 1)
-position = Vector2(1575, 232)
-physics_material_override = SubResource("PhysicsMaterial_m2lk7")
-lock_rotation = true
-script = ExtResource("5_ilb46")
-
-[node name="enemySprites" type="AnimatedSprite2D" parent="Enemy3"]
-texture_filter = 1
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_mii5c")
-animation = &"running"
-autoplay = "running"
-
-[node name="enemyCollision" type="CollisionShape2D" parent="Enemy3"]
-scale = Vector2(0.9999995, 0.9999995)
-shape = SubResource("RectangleShape2D_8l6kv")
-
-[node name="DetectPlayer" type="Area2D" parent="Enemy3"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3/DetectPlayer"]
-shape = SubResource("CircleShape2D_m2lk7")
-
-[node name="RayCast2D" type="RayCast2D" parent="Enemy3"]
 position = Vector2(1, 40)
 target_position = Vector2(60, 0)
 

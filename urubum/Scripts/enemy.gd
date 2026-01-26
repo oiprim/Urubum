@@ -2,6 +2,7 @@ extends RigidBody2D
 
 #region Definindo Variaveis
 
+#varáveis padrão
 var speed := 200
 var rushSpeed := 700
 var lookDirection
@@ -9,15 +10,17 @@ var maxTimeToRush := 90
 var timeToRush := maxTimeToRush
 var maxTimeRush := 20
 var rushTime := maxTimeRush
+@onready var spriteRend := $enemySprites
 
+#sistema de combate
 var health : int = 3
-
 @onready var attackDetection = $"../Player/attackCollision"
 
+#detecções
 @onready var player := $"../Player"
 @onready var wallDetection := $RayCast2D
 @onready var playerDetection := $DetectPlayer
-@onready var spriteRend := $enemySprites
+
 
 
 enum STATES { IDLE, PATROL, PREPARE, RUSH}
@@ -27,7 +30,7 @@ var state: STATES = STATES.PATROL
 
 func _physics_process(_delta):
 	
-	if(attackDetection.get_overlapping_areas() && player.isAttacking && not player.hasAttack):
+	if(attackDetection.get_overlapping_bodies().has(self) && player.isAttacking && not player.hasAttack):
 		takeDamage()
 		player.hasAttack = true
 	
@@ -100,7 +103,7 @@ func rush():
 		
 #endregion
 
-#region
+#region combate
 
 func takeDamage():
 	health = health - player.attackDamage;
