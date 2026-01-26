@@ -641,6 +641,12 @@ texture = SubResource("GradientTexture1D_b4e0t")
 position = Vector2(-1317, -179)
 collision_layer = 2
 script = ExtResource("1_63i4u")
+maxSpeed = null
+speed = null
+maxJumpHeigh = null
+gravityForce = null
+isCrouch = null
+speedCrouch = null
 
 [node name="playerSprites" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
@@ -706,62 +712,6 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_m2lk7")
 
 [node name="RayCast2D" type="RayCast2D" parent="Enemy"]
-position = Vector2(1, 40)
-target_position = Vector2(60, 0)
-
-[node name="Enemy2" type="RigidBody2D" parent="."]
-modulate = Color(0.57, 0.26790002, 0.26790002, 1)
-position = Vector2(2937, 698)
-physics_material_override = SubResource("PhysicsMaterial_m2lk7")
-lock_rotation = true
-script = ExtResource("5_ilb46")
-
-[node name="enemySprites" type="AnimatedSprite2D" parent="Enemy2"]
-texture_filter = 1
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_mii5c")
-animation = &"running"
-autoplay = "running"
-
-[node name="enemyCollision" type="CollisionShape2D" parent="Enemy2"]
-scale = Vector2(0.9999995, 0.9999995)
-shape = SubResource("RectangleShape2D_8l6kv")
-
-[node name="DetectPlayer" type="Area2D" parent="Enemy2"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy2/DetectPlayer"]
-shape = SubResource("CircleShape2D_m2lk7")
-
-[node name="RayCast2D" type="RayCast2D" parent="Enemy2"]
-position = Vector2(1, 40)
-target_position = Vector2(60, 0)
-
-[node name="Enemy3" type="RigidBody2D" parent="."]
-modulate = Color(0.57, 0.26790002, 0.26790002, 1)
-position = Vector2(1575, 232)
-physics_material_override = SubResource("PhysicsMaterial_m2lk7")
-lock_rotation = true
-script = ExtResource("5_ilb46")
-
-[node name="enemySprites" type="AnimatedSprite2D" parent="Enemy3"]
-texture_filter = 1
-scale = Vector2(8, 8)
-sprite_frames = SubResource("SpriteFrames_mii5c")
-animation = &"running"
-autoplay = "running"
-
-[node name="enemyCollision" type="CollisionShape2D" parent="Enemy3"]
-scale = Vector2(0.9999995, 0.9999995)
-shape = SubResource("RectangleShape2D_8l6kv")
-
-[node name="DetectPlayer" type="Area2D" parent="Enemy3"]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy3/DetectPlayer"]
-shape = SubResource("CircleShape2D_m2lk7")
-
-[node name="RayCast2D" type="RayCast2D" parent="Enemy3"]
 position = Vector2(1, 40)
 target_position = Vector2(60, 0)
 

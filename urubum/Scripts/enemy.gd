@@ -10,10 +10,15 @@ var timeToRush := maxTimeToRush
 var maxTimeRush := 20
 var rushTime := maxTimeRush
 
+var health : int = 3
+
+@onready var attackDetection = $"../Player/attackCollision"
+
 @onready var player := $"../Player"
 @onready var wallDetection := $RayCast2D
 @onready var playerDetection := $DetectPlayer
 @onready var spriteRend := $enemySprites
+
 
 enum STATES { IDLE, PATROL, PREPARE, RUSH}
 var state: STATES = STATES.PATROL
@@ -21,6 +26,12 @@ var state: STATES = STATES.PATROL
 #endregion
 
 func _physics_process(_delta):
+	
+	if(attackDetection.get_overlapping_areas() && player.isAttacking && not player.hasAttack):
+		takeDamage()
+		player.hasAttack = true
+	
+	
 	if(playerDetection.get_overlapping_bodies() and state != STATES.PREPARE and state != STATES.RUSH):
 		state = STATES.PREPARE
 	
@@ -38,6 +49,7 @@ func _physics_process(_delta):
 #@warning_ignore("unused_parameter")
 #func flipSprite(body): #Flipar o sprite do inimigo
 #	spriteRend.flip_h = !spriteRend.flip_h 
+
 
 #region Definindo cada estado do inimigo
 
@@ -86,4 +98,16 @@ func rush():
 		rushTime = maxTimeRush;
 		state = STATES.PATROL;
 		
+#endregion
+
+#region
+
+func takeDamage():
+	health = health - player.attackDamage;
+	print (health)
+	
+	if health <= 0:
+		queue_free()
+
+
 #endregion
