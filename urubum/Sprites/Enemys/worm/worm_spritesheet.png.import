@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://nhc255d62abh"
+path="res://.godot/imported/worm_spritesheet.png-1be814fdd911e4cf0b1f55014bb12915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/worm/worm_spritesheet.png"
+dest_files=["res://.godot/imported/worm_spritesheet.png-1be814fdd911e4cf0b1f55014bb12915.ctex"]
 
 [params]
 

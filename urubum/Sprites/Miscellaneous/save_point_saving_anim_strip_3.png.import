@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://cyexas7r0f2b4"
+path="res://.godot/imported/save_point_saving_anim_strip_3.png-3cf4fdfc71b5686a075710d99c39ee82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Miscellaneous/save_point_saving_anim_strip_3.png"
+dest_files=["res://.godot/imported/save_point_saving_anim_strip_3.png-3cf4fdfc71b5686a075710d99c39ee82.ctex"]
 
 [params]
 

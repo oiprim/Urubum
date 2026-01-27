@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://yedwekt1w0rv"
+path="res://.godot/imported/bird_walk_anim_strip_3.png-e7c5c754ebf0784ab7d8338951480506.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Fauna/bird_walk_anim_strip_3.png"
+dest_files=["res://.godot/imported/bird_walk_anim_strip_3.png-e7c5c754ebf0784ab7d8338951480506.ctex"]
 
 [params]
 

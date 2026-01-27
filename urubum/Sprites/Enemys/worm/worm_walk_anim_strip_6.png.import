@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://dl6gk2gpd5gti"
+path="res://.godot/imported/worm_walk_anim_strip_6.png-375e2428627479d30dd29efe7dc1b498.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/worm/worm_walk_anim_strip_6.png"
+dest_files=["res://.godot/imported/worm_walk_anim_strip_6.png-375e2428627479d30dd29efe7dc1b498.ctex"]
 
 [params]
 

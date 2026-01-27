@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://b2y4jo2fq1pbt"
+path="res://.godot/imported/fauna_spritesheet.png-9025323e240f9c27687eb698740d8d67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Fauna/fauna_spritesheet.png"
+dest_files=["res://.godot/imported/fauna_spritesheet.png-9025323e240f9c27687eb698740d8d67.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://dndx2peomqrx4"
+path="res://.godot/imported/orange_fly_idle_or_flying_anim_strip_3.png-051f4d0f0e8fd7363e0e4ba4349b88d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/fly/orange_fly_idle_or_flying_anim_strip_3.png"
+dest_files=["res://.godot/imported/orange_fly_idle_or_flying_anim_strip_3.png-051f4d0f0e8fd7363e0e4ba4349b88d0.ctex"]
 
 [params]
 

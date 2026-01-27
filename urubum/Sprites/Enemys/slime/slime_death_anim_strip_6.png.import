@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://bttpl13n8baum"
+path="res://.godot/imported/slime_death_anim_strip_6.png-4b4fea6971b9f24da126ac3384154d76.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/slime/slime_death_anim_strip_6.png"
+dest_files=["res://.godot/imported/slime_death_anim_strip_6.png-4b4fea6971b9f24da126ac3384154d76.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://dnm2n1relj5hn"
+path="res://.godot/imported/antidote_potion.png-e5b21ae033889a794697a55ad4ac2a44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Miscellaneous/antidote_potion.png"
+dest_files=["res://.godot/imported/antidote_potion.png-e5b21ae033889a794697a55ad4ac2a44.ctex"]
 
 [params]
 

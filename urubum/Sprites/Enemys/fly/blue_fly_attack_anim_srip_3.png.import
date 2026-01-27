@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://cdxj1vssgl48f"
+path="res://.godot/imported/blue_fly_attack_anim_srip_3.png-6f89d00fef365ac9149c303df4f7a19d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/fly/blue_fly_attack_anim_srip_3.png"
+dest_files=["res://.godot/imported/blue_fly_attack_anim_srip_3.png-6f89d00fef365ac9149c303df4f7a19d.ctex"]
 
 [params]
 

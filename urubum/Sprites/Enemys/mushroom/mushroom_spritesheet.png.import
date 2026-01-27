@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://uf5ldf8e27oj"
+path="res://.godot/imported/mushroom_spritesheet.png-0503a50130147f341551ca190b030355.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/mushroom/mushroom_spritesheet.png"
+dest_files=["res://.godot/imported/mushroom_spritesheet.png-0503a50130147f341551ca190b030355.ctex"]
 
 [params]
 

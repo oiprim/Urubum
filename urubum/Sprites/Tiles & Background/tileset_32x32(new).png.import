@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://bc5fty0y5dw1"
+path="res://.godot/imported/tileset_32x32(new).png-c57afa8180fc54efdf9c497e642c2770.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Tiles & Background/tileset_32x32(new).png"
+dest_files=["res://.godot/imported/tileset_32x32(new).png-c57afa8180fc54efdf9c497e642c2770.ctex"]
 
 [params]
 

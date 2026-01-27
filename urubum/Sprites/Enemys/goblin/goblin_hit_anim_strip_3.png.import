@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://b6gcy7c83t6if"
+path="res://.godot/imported/goblin_hit_anim_strip_3.png-0e01707216c51bcd74851be310901cc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/goblin/goblin_hit_anim_strip_3.png"
+dest_files=["res://.godot/imported/goblin_hit_anim_strip_3.png-0e01707216c51bcd74851be310901cc9.ctex"]
 
 [params]
 

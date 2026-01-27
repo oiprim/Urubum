@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bmu5o8e2ukjye"]
+
+[ext_resource type="Script" uid="uid://drvj47g5xsc62" path="res://Scripts/moscalvo.gd" id="1_2lyg4"]
+[ext_resource type="Texture2D" uid="uid://c8ax2hibe2jmr" path="res://Sprites/Enemys/fly/blue_fly_idle_or_flying_anim_strip_3.png" id="1_timyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my4pe"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lyg4"]
+atlas = ExtResource("1_timyx")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0n3q"]
+atlas = ExtResource("1_timyx")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adwjj"]
+atlas = ExtResource("1_timyx")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v23ln"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lyg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0n3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwjj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Moscalvo" type="RigidBody2D" unique_id=708588779]
+script = ExtResource("1_2lyg4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1731365174]
+shape = SubResource("RectangleShape2D_my4pe")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1068271777]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_v23ln")
+animation = &"idle"

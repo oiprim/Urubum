@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://bm837bxx85bpc"
+path="res://.godot/imported/coin_pickup_anim_strip_6.png-ab29b839515bb9a80b5e2e1e1fb0aefd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Miscellaneous/coin_pickup_anim_strip_6.png"
+dest_files=["res://.godot/imported/coin_pickup_anim_strip_6.png-ab29b839515bb9a80b5e2e1e1fb0aefd.ctex"]
 
 [params]
 

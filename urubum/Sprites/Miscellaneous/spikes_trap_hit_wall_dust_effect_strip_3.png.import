@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://27dl7fvpc7mp"
+path="res://.godot/imported/spikes_trap_hit_wall_dust_effect_strip_3.png-a460472a9a69bef66c2c849b942342ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Miscellaneous/spikes_trap_hit_wall_dust_effect_strip_3.png"
+dest_files=["res://.godot/imported/spikes_trap_hit_wall_dust_effect_strip_3.png-a460472a9a69bef66c2c849b942342ec.ctex"]
 
 [params]
 

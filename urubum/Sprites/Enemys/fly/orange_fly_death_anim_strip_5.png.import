@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcli0saueaake"
-path="res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"
+uid="uid://b32qg03d560vn"
+path="res://.godot/imported/orange_fly_death_anim_strip_5.png-e4c1c47b2d23c6e374b5f48d0c7c5259.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Player/Player_Fall.png"
-dest_files=["res://.godot/imported/Player_Fall.png-167e6c89d673bb3c15b8b4c90e273170.ctex"]
+source_file="res://Sprites/Enemys/fly/orange_fly_death_anim_strip_5.png"
+dest_files=["res://.godot/imported/orange_fly_death_anim_strip_5.png-e4c1c47b2d23c6e374b5f48d0c7c5259.ctex"]
 
 [params]
 
