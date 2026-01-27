@@ -91,7 +91,7 @@ func input_and_move():
 		sprite_rend.play("attack1")
 		isAttacking = true;
 	
-#coyotte time e move and slide
+#coyote time e move and slide
 func coyote_and_move_slide():
 	var was_on_floor = is_on_floor()
 	

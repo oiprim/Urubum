@@ -26,6 +26,10 @@ window/size/viewport_height=1080
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="uid://djgm8iw7d1olx"
 
+[editor]
+
+movie_writer/movie_file="D:/teste.mp4"
+
 [input]
 
 jump={
