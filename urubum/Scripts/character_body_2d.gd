@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+#variávei gerais
 var Health = 10
 var maxSpeed : int = 400
 var speed : int = 400
@@ -9,10 +10,13 @@ var gravityForce : int = 2500
 var isCrouch : bool
 var speedCrouch : int = 200
 
+#ataque
 var isAttacking : bool
 var hasAttack : bool
 var attackDamage : int = 1
 
+#imports
+@onready var collisionArea = $attackCollision
 @onready var sprite_rend = $playerSprites
 @onready var coyote_timer = $CoyoteTimer
 
@@ -21,16 +25,13 @@ func _physics_process(delta: float) -> void:
 	input_and_move()
 	coyote_and_move_slide()
 	jump()
-		
-	#region Gravidade.
+	flipAttack()
 	
+	#detectando se player está no chão
 	if not is_on_floor():
 		velocity.y += gravityForce * delta
 	
-	#endregion
-	
-	#region sprites
-
+#setando animações
 func update_animation():
 	if isAttacking:
 		return
@@ -55,18 +56,18 @@ func update_animation():
 		
 	#flip sprite
 	sprite_rend.scale.x = 4 * lookDirection
-	
-	#endregion
-	#region Pulo
+
+# definindo pulo
 func jump():
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = maxJumpHeigh
 	if Input.is_action_just_released("jump") and velocity.y <0:
 		velocity.y = 0
-	#endregion
-	#region Pega input e movimenta
+
+#inputs gerais e aplicando movimento
 func input_and_move():
-	var direction := Input.get_axis("ui_left", "ui_right")
+	
+	var direction = inputDirection()
 	
 	if direction != 0:
 		lookDirection = sign(direction)
@@ -77,19 +78,20 @@ func input_and_move():
 			velocity.x = direction * speedCrouch
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		
+	
+	#input de agachar
 	if Input.is_action_pressed("crouch") && is_on_floor():
 		isCrouch = true;
 		
 	if Input.is_action_just_released("crouch"):
 		isCrouch = false;
-		
+	
+	#input de ataque
 	if Input.is_action_just_pressed("attack") && not isAttacking:
 		sprite_rend.play("attack1")
 		isAttacking = true;
-		
-	#endregion
-	#region Coyote Time e Move and Slide
+	
+#coyotte time e move and slide
 func coyote_and_move_slide():
 	var was_on_floor = is_on_floor()
 	
@@ -97,17 +99,26 @@ func coyote_and_move_slide():
 	
 	if was_on_floor &&  !is_on_floor():
 		coyote_timer.start()
-	
-	#endregion
-	
+
+#ready para definir que animação de ataque acabou para poder atacar de novo
 func _ready():
 	sprite_rend.animation_finished.connect(_on_animation_finished)
 	
+#denifnindo que a animação acabou
 func _on_animation_finished():
 	print("animação acabou")
 	isAttacking = false;
 	hasAttack = false;
 	
+#pegando posição do player para câmera
 func getPlayerPos():
-	
 	return global_position;
+	
+#input de direção para servir de guia para tudo que acompanha o player
+func inputDirection():
+	return(Input.get_axis("ui_left", "ui_right"))
+	
+#trocar o ataque pro lado que o player olha
+func flipAttack():
+	if not isAttacking && inputDirection() != 0:
+		collisionArea.scale.x = lookDirection
