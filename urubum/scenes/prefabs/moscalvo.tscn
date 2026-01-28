@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dmoyn8e5xdvg7"]
+
+[ext_resource type="PackedScene" uid="uid://b4emgydevuhy5" path="res://scenes/component/HealthComponent.tscn" id="1_r08vo"]
+[ext_resource type="PackedScene" uid="uid://crmngkeesjfu2" path="res://scenes/component/HitBoxComponent.tscn" id="2_ye61e"]
+[ext_resource type="Texture2D" uid="uid://c8ax2hibe2jmr" path="res://assets/sprites/enemys/fly/blue_fly_idle_or_flying_anim_strip_3.png" id="3_381oo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mr6vn"]
+radius = 45.276924
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ip1y6"]
+size = Vector2(62, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lv2ii"]
+atlas = ExtResource("3_381oo")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v7tw"]
+atlas = ExtResource("3_381oo")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j57oe"]
+atlas = ExtResource("3_381oo")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t5hh1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lv2ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v7tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j57oe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Moscalvo" type="CharacterBody2D" unique_id=796275390]
+
+[node name="HealthComponent" parent="." unique_id=1932708337 instance=ExtResource("1_r08vo")]
+
+[node name="HitBoxComponent" parent="." unique_id=1784709597 instance=ExtResource("2_ye61e")]
+
+[node name="HitBox" type="CollisionShape2D" parent="HitBoxComponent" unique_id=522891379]
+shape = SubResource("CircleShape2D_mr6vn")
+debug_color = Color(0.9248427, 4.418403e-05, 0.68041974, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458301501]
+shape = SubResource("RectangleShape2D_ip1y6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1451590285]
+texture_filter = 1
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_t5hh1")
