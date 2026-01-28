@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7cajjgsv5xqh"]
 
-[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://scripts/cogubro.gd" id="1_xm0ow"]
+[ext_resource type="Script" uid="uid://bw547o5vyt5h3" path="res://Scripts/cogubro.gd" id="1_xm0ow"]
 [ext_resource type="Texture2D" uid="uid://uf5ldf8e27oj" path="res://assets/sprites/enemys/mushroom/mushroom_spritesheet.png" id="2_mecmk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m2lk7"]

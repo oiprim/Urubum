@@ -62,20 +62,28 @@ func idle():
 
 func patrol(): #Rondar de um lado para o outro
 	spriteRend.play("running")
-	speed = speed
-	if(spriteRend.flip_h == false): 
+	
+	if spriteRend.flip_h == false:
 		lookDirection = 1 
 	else: lookDirection = -1  #Definindo o lado da procura
 	
 	self.linear_velocity = Vector2(speed * lookDirection, self.linear_velocity.y); #Mandando ele andar
 	
 	if wallDetection.is_colliding():
-		spriteRend.scale = spriteRend.scale * -1
+		spriteRend.flip_h = !spriteRend.flip_h
+		wallDetection.target_position.x *= -1
+		
 		
 func prepare():
+	
+	#if wallDetection.is_colliding(): TENTANDO ARRUMAR O INIMIGO PRA NÃO
+	#	return
+		
 	spriteRend.play("idle");
 	lookDirection = sign(player.global_position.x - global_position.x)
 	timeToRush -= 1;
+	
+
 	if(lookDirection == -1):
 		spriteRend.flip_h = true
 	else: spriteRend.flip_h = false
@@ -85,7 +93,7 @@ func prepare():
 		state = STATES.RUSH;
 	
 	self.linear_velocity = Vector2(0, self.linear_velocity.y);
-
+	
 func rush():
 	print(rushTime)
 	spriteRend.play("rushing");
@@ -95,8 +103,14 @@ func rush():
 		spriteRend.flip_h = true
 	else: spriteRend.flip_h = false
 	
-	
 	self.linear_velocity = Vector2(rushSpeed * lookDirection, self.linear_velocity.y);
+	
+	if wallDetection.is_colliding():
+		rushTime = maxTimeRush
+		spriteRend.flip_h = !spriteRend.flip_h
+		wallDetection.target_position.x *= -1
+		state= STATES.PATROL
+		return
 	
 	if(rushTime <= 0):
 		rushTime = maxTimeRush;
