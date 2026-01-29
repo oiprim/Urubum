@@ -27,8 +27,8 @@ var attackDamage : int = 1
 @onready var footstepsAudio = $footstepsAudio
 @onready var jumpAudio = $jumpAudio
 @onready var landAudio = $landAudio
-@export var canReplayFootsteps : bool = true
-@export var canReplayLand : bool = true
+var canReplayFootsteps : bool = true
+var canReplayLand : bool = true
 
 func _physics_process(delta: float) -> void:
 	

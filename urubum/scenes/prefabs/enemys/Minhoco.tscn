@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dhwjh4qd4sg0t"]
 
-[ext_resource type="Script" uid="uid://cbfbb636gsold" path="res://scripts/minhoco.gd" id="1_7aay4"]
+[ext_resource type="Script" uid="uid://cbfbb636gsold" path="res://Scripts/minhoco.gd" id="1_7aay4"]
 [ext_resource type="Texture2D" uid="uid://dl6gk2gpd5gti" path="res://assets/sprites/enemys/worm/worm_walk_anim_strip_6.png" id="1_r6ihs"]
-[ext_resource type="PackedScene" uid="uid://b4emgydevuhy5" path="res://scenes/component/HealthComponent.tscn" id="2_8bjbf"]
-[ext_resource type="PackedScene" uid="uid://crmngkeesjfu2" path="res://scenes/component/HitBoxComponent.tscn" id="3_ry40f"]
+[ext_resource type="PackedScene" uid="uid://b4emgydevuhy5" path="res://Scenes/component/HealthComponent.tscn" id="2_8bjbf"]
+[ext_resource type="PackedScene" uid="uid://crmngkeesjfu2" path="res://Scenes/component/HitBoxComponent.tscn" id="3_ry40f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bjbf"]
 atlas = ExtResource("1_r6ihs")
