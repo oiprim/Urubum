@@ -9,6 +9,7 @@ var maxJumpHeigh : int = -1000
 var gravityForce : int = 2500
 var isCrouch : bool
 var speedCrouch : int = 200
+var isJumping : bool
 
 #ataque
 var isAttacking : bool
@@ -19,6 +20,14 @@ var attackDamage : int = 1
 @onready var collisionArea = $attackCollision
 @onready var sprite_rend = $playerSprites
 @onready var coyote_timer = $CoyoteTimer
+
+#audio
+@onready var hitAudio = $hitAudio
+@onready var footstepsAudio = $footstepsAudio
+@onready var jumpAudio = $jumpAudio
+@onready var landAudio = $landAudio
+@export var canReplayFootsteps : bool = true
+@export var canReplayLand : bool = true
 
 func _physics_process(delta: float) -> void:
 	update_animation()
@@ -61,23 +70,38 @@ func update_animation():
 func jump():
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
 		velocity.y = maxJumpHeigh
+		jumpAudio.play()
+		isJumping = true
 	if Input.is_action_just_released("jump") and velocity.y <0:
 		velocity.y = 0
+		canReplayLand = true
+	if isJumping == true && is_on_floor() && canReplayLand:
+		landAudio.play()
+		canReplayLand = false
 
-#inputs gerais e aplicando movimento
+#inputs gerais e aplicando movimento (e agora sons tambem)
 func input_and_move():
 	
 	var direction = inputDirection()
 	
 	if direction != 0:
 		lookDirection = sign(direction)
-	
+		if canReplayFootsteps == true && is_on_floor() && velocity.x != 0:
+			footstepsAudio.play()
+		if footstepsAudio.playing:
+			canReplayFootsteps = false
+		if !is_on_floor() or velocity.x == 0:
+			footstepsAudio.stop()
+			canReplayFootsteps = true
+		
 	if direction:
 		velocity.x = direction * speed
 		if isCrouch == true:
 			velocity.x = direction * speedCrouch
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+		footstepsAudio.stop()
+		canReplayFootsteps = true
 	
 	#input de agachar
 	if Input.is_action_pressed("crouch") && is_on_floor():
@@ -89,6 +113,7 @@ func input_and_move():
 	#input de ataque
 	if Input.is_action_just_pressed("attack") && not isAttacking:
 		sprite_rend.play("attack1")
+		hitAudio.play()
 		isAttacking = true;
 	
 #coyote time e move and slide
@@ -122,3 +147,4 @@ func inputDirection():
 func flipAttack():
 	if not isAttacking && inputDirection() != 0:
 		collisionArea.scale.x = lookDirection
+	

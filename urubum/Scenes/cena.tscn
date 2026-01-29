@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crmt5srn0p4de" path="res://assets/sprites/tiles & background/bg_1.png" id="2_px4nk"]
 [ext_resource type="Texture2D" uid="uid://u1mpnhbt1ync" path="res://assets/sprites/tiles & background/bg_2.png" id="3_y84gy"]
 [ext_resource type="PackedScene" uid="uid://twh8bgajyml8" path="res://assets/sprites/enemys/Player.tscn" id="4_2312p"]
-[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://scripts/camera.gd" id="5_ajq3l"]
+[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://Scripts/camera.gd" id="5_ajq3l"]
 [ext_resource type="Texture2D" uid="uid://c0ypuh6123ba" path="res://assets/sprites/tiles & background/tileset_64x64(new).png" id="6_k22su"]
 [ext_resource type="PackedScene" uid="uid://b7cajjgsv5xqh" path="res://assets/sprites/enemys/Cogubro.tscn" id="7_ucdcr"]
 [ext_resource type="Texture2D" uid="uid://x51g6n3l1jt3" path="res://assets/sprites/texture/TX Village Props.png" id="8_ymt3f"]

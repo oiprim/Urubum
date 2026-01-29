@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://cqpy1jo44dggo" path="res://assets/sprites/player/Player_Run.png" id="8_hgas3"]
 [ext_resource type="AudioStream" uid="uid://b0rrftp561mbn" path="res://assets/soundEffects/hit.mp3" id="9_4kx21"]
 [ext_resource type="AudioStream" uid="uid://f2lxkw1eqcpq" path="res://assets/soundEffects/footsteps.wav" id="10_aov6u"]
-[ext_resource type="AudioStream" uid="uid://bt4gp12l1hub0" path="res://assets/soundEffects/jump.mp3" id="11_s7n72"]
-[ext_resource type="AudioStream" uid="uid://dkn8ywk4d8qbm" path="res://assets/soundEffects/landing.mp3" id="12_oce0q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8dtke"]
 atlas = ExtResource("2_flwww")
@@ -345,9 +343,8 @@ script = ExtResource("1_j6jxu")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ygyag")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.4788137
 offset = Vector2(5.5, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417287183]
@@ -371,16 +368,6 @@ texture_scale = 3.36
 
 [node name="hitAudio" type="AudioStreamPlayer2D" parent="." unique_id=796307009]
 stream = ExtResource("9_4kx21")
-bus = &"phase_ranger"
 
 [node name="footstepsAudio" type="AudioStreamPlayer2D" parent="." unique_id=1230064950]
 stream = ExtResource("10_aov6u")
-pitch_scale = 1.7
-
-[node name="jumpAudio" type="AudioStreamPlayer2D" parent="." unique_id=900341854]
-stream = ExtResource("11_s7n72")
-bus = &"phase_ranger"
-
-[node name="landAudio" type="AudioStreamPlayer2D" parent="." unique_id=222718239]
-stream = ExtResource("12_oce0q")
-bus = &"phase_ranger"
