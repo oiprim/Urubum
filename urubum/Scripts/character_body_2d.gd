@@ -30,6 +30,7 @@ var attackDamage : int = 1
 @export var canReplayLand : bool = true
 
 func _physics_process(delta: float) -> void:
+	
 	update_animation()
 	input_and_move()
 	coyote_and_move_slide()
@@ -50,22 +51,23 @@ func update_animation():
 			sprite_rend.play("jump")
 		else:
 			sprite_rend.play("fall")
-	
+		
 	elif isCrouch:
 		if velocity.x != 0:
 			sprite_rend.play ("crouchWalk")
 		else:
 			sprite_rend.play("crouch")
-			
+		
 	elif velocity.x != 0:
 		sprite_rend.play("run")
-	
+		
 	else:
 		sprite_rend.play("idle")
 		
 	#flip sprite
 	sprite_rend.scale.x = 4 * lookDirection
-
+	
+	
 # definindo pulo
 func jump():
 	if Input.is_action_just_pressed("jump") and (is_on_floor() or !coyote_timer.is_stopped()):
@@ -78,7 +80,8 @@ func jump():
 	if isJumping == true && is_on_floor() && canReplayLand:
 		landAudio.play()
 		canReplayLand = false
-
+	
+	
 #inputs gerais e aplicando movimento (e agora sons tambem)
 func input_and_move():
 	
@@ -103,6 +106,7 @@ func input_and_move():
 		footstepsAudio.stop()
 		canReplayFootsteps = true
 	
+	
 	#input de agachar
 	if Input.is_action_pressed("crouch") && is_on_floor():
 		isCrouch = true;
@@ -110,11 +114,13 @@ func input_and_move():
 	if Input.is_action_just_released("crouch"):
 		isCrouch = false;
 	
+	
 	#input de ataque
 	if Input.is_action_just_pressed("attack") && not isAttacking:
 		sprite_rend.play("attack1")
 		hitAudio.play()
 		isAttacking = true;
+	
 	
 #coyote time e move and slide
 func coyote_and_move_slide():
@@ -124,10 +130,12 @@ func coyote_and_move_slide():
 	
 	if was_on_floor &&  !is_on_floor():
 		coyote_timer.start()
-
+	
+	
 #ready para definir que animação de ataque acabou para poder atacar de novo
 func _ready():
 	sprite_rend.animation_finished.connect(_on_animation_finished)
+	
 	
 #denifnindo que a animação acabou
 func _on_animation_finished():
@@ -135,13 +143,16 @@ func _on_animation_finished():
 	isAttacking = false;
 	hasAttack = false;
 	
+	
 #pegando posição do player para câmera
 func getPlayerPos():
 	return global_position;
 	
+	
 #input de direção para servir de guia para tudo que acompanha o player
 func inputDirection():
 	return(Input.get_axis("ui_left", "ui_right"))
+	
 	
 #trocar o ataque pro lado que o player olha
 func flipAttack():
