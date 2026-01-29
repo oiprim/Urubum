@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://twh8bgajyml8"]
 
-[ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://Scripts/character_body_2d.gd" id="1_j6jxu"]
+[ext_resource type="Script" uid="uid://djfeb5we8ue0o" path="res://scripts/character_body_2d.gd" id="1_j6jxu"]
 [ext_resource type="Texture2D" uid="uid://kqmb6m2wkpgl" path="res://assets/sprites/player/Player_Attack.png" id="2_flwww"]
 [ext_resource type="Texture2D" uid="uid://daa2b55r1hjfq" path="res://assets/sprites/player/Player_Crouch.png" id="3_gvmk3"]
 [ext_resource type="Texture2D" uid="uid://ctkqds5q306fy" path="res://assets/sprites/player/Player_CrouchWalk.png" id="4_junwi"]
@@ -348,14 +348,14 @@ script = ExtResource("1_j6jxu")
 texture_filter = 1
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ygyag")
-animation = &"idle"
+animation = &"crouchWalk"
 autoplay = "idle"
 offset = Vector2(5.5, -21)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=417287183]
 shape = SubResource("RectangleShape2D_p2fcy")
 
-[node name="attackCollision" type="Area2D" parent="." unique_id=1291329205]
+[node name="attackCollision" type="Area2D" parent="." unique_id=1291329205 groups=["attackCollision"]]
 
 [node name="attackShape" type="CollisionShape2D" parent="attackCollision" unique_id=1338605650]
 position = Vector2(160, 0)

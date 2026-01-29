@@ -1,15 +1,16 @@
 [gd_scene format=4 uid="uid://tmqnjb884e6t"]
 
-[ext_resource type="Texture2D" uid="uid://bsrj1weuasx0y" path="res://assets/sprites/tiles & background/bg_0.png" id="1_vvjk2"]
-[ext_resource type="Texture2D" uid="uid://crmt5srn0p4de" path="res://assets/sprites/tiles & background/bg_1.png" id="2_px4nk"]
-[ext_resource type="Texture2D" uid="uid://u1mpnhbt1ync" path="res://assets/sprites/tiles & background/bg_2.png" id="3_y84gy"]
-[ext_resource type="PackedScene" uid="uid://twh8bgajyml8" path="res://assets/sprites/enemys/Player.tscn" id="4_2312p"]
-[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://Scripts/camera.gd" id="5_ajq3l"]
-[ext_resource type="Texture2D" uid="uid://c0ypuh6123ba" path="res://assets/sprites/tiles & background/tileset_64x64(new).png" id="6_k22su"]
-[ext_resource type="PackedScene" uid="uid://b7cajjgsv5xqh" path="res://assets/sprites/enemys/Cogubro.tscn" id="7_ucdcr"]
-[ext_resource type="Texture2D" uid="uid://x51g6n3l1jt3" path="res://assets/sprites/texture/TX Village Props.png" id="8_ymt3f"]
-[ext_resource type="AudioStream" uid="uid://bwa25guqlouxw" path="res://assets/soundEffects/cricket.mp3" id="9_chjah"]
-[ext_resource type="AudioStream" uid="uid://1oudy47ruui4" path="res://assets/soundEffects/wind.mp3" id="10_vqsga"]
+[ext_resource type="Texture2D" uid="uid://bsrj1weuasx0y" path="res://assets/sprites/tiles & background/bg_0.png" id="1_uk7sk"]
+[ext_resource type="Texture2D" uid="uid://crmt5srn0p4de" path="res://assets/sprites/tiles & background/bg_1.png" id="2_pv1t6"]
+[ext_resource type="Texture2D" uid="uid://u1mpnhbt1ync" path="res://assets/sprites/tiles & background/bg_2.png" id="3_5e4gn"]
+[ext_resource type="PackedScene" uid="uid://twh8bgajyml8" path="res://assets/sprites/enemys/Player.tscn" id="4_avaoe"]
+[ext_resource type="Script" uid="uid://dbn8iehyb6whl" path="res://scripts/camera.gd" id="5_no45v"]
+[ext_resource type="PackedScene" uid="uid://i7pl71ehtbr" path="res://scenes/prefabs/enemys/Cogubro.tscn" id="6_br2v0"]
+[ext_resource type="Texture2D" uid="uid://c0ypuh6123ba" path="res://assets/sprites/tiles & background/tileset_64x64(new).png" id="7_xb4pq"]
+[ext_resource type="Texture2D" uid="uid://x51g6n3l1jt3" path="res://assets/sprites/texture/TX Village Props.png" id="8_w07gq"]
+[ext_resource type="AudioStream" uid="uid://bwa25guqlouxw" path="res://assets/soundEffects/cricket.mp3" id="9_1jg7s"]
+[ext_resource type="AudioStream" uid="uid://1oudy47ruui4" path="res://assets/soundEffects/wind.mp3" id="10_5stj4"]
+[ext_resource type="PackedScene" uid="uid://dhwjh4qd4sg0t" path="res://scenes/prefabs/enemys/Minhoco.tscn" id="11_pv1t6"]
 
 [sub_resource type="Gradient" id="Gradient_o7tya"]
 offsets = PackedFloat32Array(0.34931508, 1)
@@ -20,7 +21,7 @@ metadata/_snap_count = 2
 gradient = SubResource("Gradient_o7tya")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cy5s4"]
-texture = ExtResource("6_k22su")
+texture = ExtResource("7_xb4pq")
 texture_region_size = Vector2i(64, 64)
 use_texture_padding = false
 6:1/0 = 0
@@ -156,7 +157,7 @@ size = Vector2(8807, 161)
 size = Vector2(155, 1906)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_chjah"]
-texture = ExtResource("8_ymt3f")
+texture = ExtResource("8_w07gq")
 5:2/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -1532,7 +1533,7 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=662712299]
 texture_filter = 1
-texture = ExtResource("1_vvjk2")
+texture = ExtResource("1_uk7sk")
 
 [node name="ParallaxLayer2" type="Parallax2D" parent="ParallaxBackground" unique_id=362575336]
 scale = Vector2(6, 6)
@@ -1543,7 +1544,7 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2" unique_id=2021845710]
 texture_filter = 1
-texture = ExtResource("2_px4nk")
+texture = ExtResource("2_pv1t6")
 
 [node name="ParallaxLayer3" type="Parallax2D" parent="ParallaxBackground" unique_id=2053784542]
 scale = Vector2(6, 6)
@@ -1553,7 +1554,7 @@ repeat_times = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3" unique_id=353654972]
 texture_filter = 1
-texture = ExtResource("3_y84gy")
+texture = ExtResource("3_5e4gn")
 
 [node name="SubSoloColor" type="Polygon2D" parent="." unique_id=233828572]
 z_index = -2
@@ -1574,7 +1575,7 @@ rotation = 1.5707964
 scale = Vector2(5.4299984, 537)
 texture = SubResource("GradientTexture1D_b4e0t")
 
-[node name="Player" parent="." unique_id=418375760 instance=ExtResource("4_2312p")]
+[node name="Player" parent="." unique_id=418375760 instance=ExtResource("4_avaoe")]
 position = Vector2(-1317, -179)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1000184510]
@@ -1583,7 +1584,7 @@ limit_left = -3540
 limit_top = -1245
 limit_right = 5010
 limit_bottom = 1075
-script = ExtResource("5_ajq3l")
+script = ExtResource("5_no45v")
 
 [node name="Floor" type="TileMapLayer" parent="." unique_id=1090974619]
 texture_filter = 1
@@ -1593,9 +1594,6 @@ tile_set = SubResource("TileSet_muoms")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Floor" unique_id=1263856464]
 occluder = SubResource("OccluderPolygon2D_chjah")
-
-[node name="Cogubro" parent="." unique_id=917818168 instance=ExtResource("7_ucdcr")]
-position = Vector2(0, 222)
 
 [node name="WorldWalls" type="StaticBody2D" parent="." unique_id=480235639]
 position = Vector2(-3702, -399)
@@ -1635,13 +1633,13 @@ texture_scale = 3.36
 
 [node name="cricketAudio" type="AudioStreamPlayer2D" parent="." unique_id=1515309501]
 position = Vector2(-522, 300)
-stream = ExtResource("9_chjah")
+stream = ExtResource("9_1jg7s")
 autoplay = true
 max_distance = 1000.0
 attenuation = 2.0
 
 [node name="windAudio" type="AudioStreamPlayer" parent="." unique_id=29133572]
-stream = ExtResource("10_vqsga")
+stream = ExtResource("10_5stj4")
 pitch_scale = 0.83
 autoplay = true
 parameters/looping = true
@@ -1658,3 +1656,10 @@ fixed_fps = 0
 trail_enabled = true
 trail_lifetime = 0.02
 process_material = SubResource("ParticleProcessMaterial_hgn44")
+
+[node name="Cogubro" parent="." unique_id=1164153741 node_paths=PackedStringArray("player") instance=ExtResource("6_br2v0")]
+position = Vector2(183, 286)
+player = NodePath("../Player")
+
+[node name="Minhoco" parent="." unique_id=1194590591 instance=ExtResource("11_pv1t6")]
+position = Vector2(-1681, 348)

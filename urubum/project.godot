@@ -19,6 +19,10 @@ run/main_scene="uid://tmqnjb884e6t"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://dq8ubboudqppt"
+
 [display]
 
 window/size/viewport_width=1920
@@ -29,6 +33,10 @@ mouse_cursor/custom_image="uid://djgm8iw7d1olx"
 [editor]
 
 movie_writer/movie_file="D:/teste.mp4"
+
+[global_group]
+
+attackCollision=""
 
 [input]
 

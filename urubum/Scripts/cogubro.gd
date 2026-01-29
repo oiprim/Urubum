@@ -1,5 +1,4 @@
 extends RigidBody2D
-class_name Enemy
 
 #region Definindo Variaveis
 
@@ -11,25 +10,28 @@ var maxTimeToRush := 90
 var timeToRush := maxTimeToRush
 var maxTimeRush := 20
 var rushTime := maxTimeRush
-@onready var spriteRend := $enemySprites
+@export var spriteRend : AnimatedSprite2D
 
 #sistema de combate
 var health : int = 3
-@onready var attackDetection = $"../Player/attackCollision"
+
 
 #detecções
-@onready var player := $"../Player"
-@onready var wallDetection := $RayCast2D
-@onready var playerDetection := $DetectPlayer
-
-
+@export var player : CharacterBody2D
+@export var wallDetection : RayCast2D
+@export var playerDetection : Area2D
+@export var attackDetection : Area2D 
 
 enum STATES { IDLE, PATROL, PREPARE, RUSH}
 var state: STATES = STATES.PATROL
 
 #endregion
 
-func _physics_process(_delta):
+func _ready() -> void:
+	attackDetection = get_tree().get_first_node_in_group("attackCollision");
+	
+
+func _physics_process(_delta) -> void:
 	
 	if(attackDetection.get_overlapping_bodies().has(self) && player.isAttacking && not player.hasAttack):
 		takeDamage()

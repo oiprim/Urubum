@@ -21,6 +21,7 @@ var attackDamage : int = 1
 @onready var sprite_rend = $playerSprites
 @onready var coyote_timer = $CoyoteTimer
 
+
 #audio
 @onready var hitAudio = $hitAudio
 @onready var footstepsAudio = $footstepsAudio
@@ -159,3 +160,6 @@ func flipAttack():
 	if not isAttacking && inputDirection() != 0:
 		collisionArea.scale.x = lookDirection
 	
+	
+func getAttackCollision():
+	return collisionArea;

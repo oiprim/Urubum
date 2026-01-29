@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4emgydevuhy5"]
 
-[ext_resource type="Script" uid="uid://mclau5gc34wt" path="res://Scripts/component/HealthComponent.gd" id="1_26f4h"]
+[ext_resource type="Script" uid="uid://mclau5gc34wt" path="res://scripts/component/health_component.gd" id="1_26f4h"]
 
-[node name="HealthComponent" type="Node2D" unique_id=1932708337]
+[node name="HealthComponent" type="Node" unique_id=1640610534]
 script = ExtResource("1_26f4h")
